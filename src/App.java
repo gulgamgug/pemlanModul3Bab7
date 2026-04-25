@@ -22,38 +22,32 @@ public class App {
         arrayKue[17] = new Jadi("Onde-onde", 2500, 35);
         arrayKue[18] = new Pesanan("Chiffon Cake", 75000, 1.1);
         arrayKue[19] = new Jadi("Risol Mayo", 4000, 25);
-
+        
         double totalSemua = 0;
+        double totalHargaPesanan = 0;
+        double totalBeratPesanan = 0;
+        double totalHargaJadi = 0;
+        double totalJumlahJadi = 0;
+        Kue kueTermahal = arrayKue[0];
+        
         for (Kue k: arrayKue) {
             totalSemua += k.hitungHarga();
-        }
-
-        double totalHargaPesanan = 0;
-        for (Kue k: arrayKue) {
             if (k instanceof Pesanan) {
                 totalHargaPesanan += k.hitungHarga();
             }
-        }
-
-        double totalBeratPesanan = 0;
-        for (Kue k: arrayKue) {
             if (k instanceof Pesanan) {
                 totalBeratPesanan += ((Pesanan) k).getBerat();
             }
-        }
-
-        double totalHargaJadi = 0;
-        for (Kue k: arrayKue) {
             if (k instanceof Jadi) {
                 totalHargaJadi += k.hitungHarga();
             }
-        }
-
-        double totalJumlahJadi = 0;
-        for (Kue k: arrayKue) {
             if (k instanceof Jadi) {
                 totalJumlahJadi += ((Jadi) k).getJumlah();
             }
+            if (k.hitungHarga() > kueTermahal.hitungHarga()) {
+                kueTermahal = k;
+            }
+            
         }
 
         System.out.println("======== DAFTAR KUE: ========");
@@ -77,13 +71,6 @@ public class App {
         System.out.println("Total Berat Kue Pesanan: " + totalBeratPesanan + " kg");        
         System.out.println("Total Harga Kue Jadi: Rp " + totalHargaJadi);        
         System.out.println("Total Jumlah Kue Jadi: " + totalJumlahJadi);        
-        
-        Kue kueTermahal = arrayKue[0];
-        for (Kue k: arrayKue) {
-            if (k.hitungHarga() > kueTermahal.hitungHarga()) {
-                kueTermahal = k;
-            }
-        }
         System.out.println("Kue dengan Harga Termahal: " + kueTermahal.toString());
     }
 }
