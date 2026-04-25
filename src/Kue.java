@@ -19,10 +19,6 @@ public abstract class Kue {
         return harga;
     }
 
-    public void setHarga(double harga) {
-        this.harga = harga;
-    }
-
     public abstract double hitungHarga();
     public String toString() {
         return "Nama kue: " + nama + ", Harga: Rp " + hitungHarga() + ", Harga satuan: Rp " + harga;

@@ -10,6 +10,10 @@ public class Jadi extends Kue {
         return jumlah * getHarga() * 2;
     }
 
+    public double getJumlah() {
+        return this.jumlah;
+    }
+
     @Override
     public String toString() {
         return super.toString() + ", Jumlah: " + jumlah;

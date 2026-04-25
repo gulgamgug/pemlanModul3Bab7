@@ -10,10 +10,6 @@ public class Pesanan extends Kue{
         return berat;
     }
 
-    public void setBerat(double berat) {
-        this.berat = berat;
-    }
-
     @Override
     public double hitungHarga() {
         return berat * getHarga();
@@ -22,5 +18,6 @@ public class Pesanan extends Kue{
     @Override
     public String toString() {
         return super.toString() + ", Berat: " + berat + " kg";
-    }   
+    }
+   
 }
