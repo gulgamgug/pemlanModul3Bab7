@@ -1,7 +1,7 @@
-public class Pesanan extends Kue{
+public class KuePesanan extends Kue{
     private double berat;
 
-    public Pesanan(String nama, double harga, double berat) {
+    public KuePesanan(String nama, double harga, double berat) {
         super(nama, harga);
         this.berat = berat;
     }
